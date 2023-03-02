@@ -28,16 +28,16 @@ snippet tmplt "Template"
 	\\end{document}
 
 #newcommand
-snippet nc \newcommand
+snippet newcommand \newcommand
 	\\newcommand{\\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
 #usepackage
-snippet up \usepackage
+snippet usepackage \usepackage
 	\\usepackage[${1:options}]{${2:package}} ${0}
 #newunicodechar
-snippet nuc \newunicodechar
+snippet newunicodechar \newunicodechar
 	\\newunicodechar{${1}}{${2:\\ensuremath}${3:tex-substitute}}} ${0}
 #DeclareMathOperator
-snippet dmo \DeclareMathOperator
+snippet DeclareMathOperator \DeclareMathOperator
 	\\DeclareMathOperator{${1}}{${2}} ${0}
 
 #DOCUMENT
@@ -48,16 +48,16 @@ snippet begin \begin{} ... \end{} block
 	\\end{$1}
 
 # Maketitle
-snippet mkt maketitle
+snippet maketitle maketitle
 	\\maketitle
 	
 # Tabular
-snippet tab tabular (or arbitrary) environment
+snippet tabular tabular (or arbitrary) environment
 	\\begin{${1:tabular}}{${2:c}}
 		${0:${VISUAL}}
 	\\end{$1}
-snippet thm thm (or arbitrary) environment with optional argument
-	\\begin[${1:author}]{${2:thm}}
+snippet theorem theorem (or arbitrary) environment with optional argument
+	\\begin[${1:author}]{${2:theorem}}
 		${0:${VISUAL}}
 	\\end{$2}
 snippet center center environment
@@ -65,13 +65,13 @@ snippet center center environment
 		${0:${VISUAL}}
 	\\end{center}
 # Align(ed)
-snippet ali align(ed) environment
+snippet align align(ed) environment
 	\\begin{align${1:ed}}
 		\\label{eq:${2}}
 		${0:${VISUAL}}
 	\\end{align$1}
 # Gather(ed)
-snippet gat gather(ed) environment
+snippet gather gather(ed) environment
 	\\begin{gather${1:ed}}
 		${0:${VISUAL}}
 	\\end{gather$1}
@@ -87,7 +87,7 @@ snippet eql Labeled equation environment
 		${0:${VISUAL}}
 	\\end{equation}
 # Equation
-snippet eq* unnumbered equation environment
+snippet equation* unnumbered equation environment
 	\\begin{equation*}
 		${0:${VISUAL}}
 	\\end{equation*}
@@ -102,7 +102,7 @@ snippet eqnarray eqnarray environment
 		${0:${VISUAL}}
 	\\end{eqnarray}
 # Label
-snippet lab \label
+snippet label \label
 	\\label{${1:eq:}${2:fig:}${3:tab:}${0}}
 # Enumerate
 snippet enum enumerate environment
@@ -118,14 +118,14 @@ snippet enumi enumerate environment
 		\\item ${0}
 	\\end{enumerate}
 # Itemize
-snippet item itemize environment
+snippet itemize itemize environment
 	\\begin{itemize}
 		\\item ${0}
 	\\end{itemize}
-snippet it \item
+snippet item \item
 	\\item ${1:${VISUAL}}
 # Description
-snippet desc description environment
+snippet description description environment
 	\\begin{description}
 		\\item[${1}] ${0}
 	\\end{description}
@@ -134,18 +134,18 @@ snippet ]i \item (recursive)
 	\\item ${1}
 		${0:]i}
 # Matrix
-snippet mat smart matrix environment
+snippet matrix smart matrix environment
 	\\begin{${1:p/b/v/V/B/small}matrix}
 		${0:${VISUAL}}
 	\\end{$1matrix}
 # Cases
-snippet cas cases environment
+snippet cases cases environment
 	\\begin{cases}
 		${1:equation}, &\\text{ if }${2:case}\\
 		${0:${VISUAL}}
 	\\end{cases}
 # Split
-snippet spl split environment
+snippet split split environment
 	\\begin{split}
 		${0:${VISUAL}}
 	\\end{split}
@@ -156,51 +156,51 @@ snippet part document \part
 	${0}
 	% part $2 (end)
 # Chapter
-snippet cha \chapter
+snippet chapter \chapter
 	\\chapter{${1:chapter name}}%
 	\\label{cha:${2:$1}}
 	${0}
 # Section
-snippet sec \section
+snippet section \section
 	\\section{${1:section name}}%
 	\\label{sec:${2:$1}}
 	${0}
 # Section without number
-snippet sec* \section*
+snippet section* \section*
 	\\section*{${1:section name}}%
 	\\label{sec:${2:$1}}
 	${0}
 # Sub Section
-snippet sub \subsection
+snippet subsection \subsection
 	\\subsection{${1:subsection name}}%
 	\\label{sub:${2:$1}}
 	${0}
 # Sub Section without number
-snippet sub* \subsection*
+snippet subsection* \subsection*
 	\\subsection*{${1:subsection name}}%
 	\\label{sub:${2:$1}}
 	${0}
 # Sub Sub Section
-snippet ssub \subsubsection
+snippet subsubsection \subsubsection
 	\\subsubsection{${1:subsubsection name}}%
 	\\label{ssub:${2:$1}}
 	${0}
 # Sub Sub Section without number
-snippet ssub* \subsubsection*
+snippet subsubsection* \subsubsection*
 	\\subsubsection*{${1:subsubsection name}}%
 	\\label{ssub:${2:$1}}
 	${0}
 # Paragraph
-snippet par \paragraph
+snippet paragraph \paragraph
 	\\paragraph{${1:paragraph name}}%
 	\\label{par:${2:$1}}
 	${0}
 # Sub Paragraph
-snippet subp \subparagraph
+snippet subparagraph \subparagraph
 	\\subparagraph{${1:subparagraph name}}%
 	\\label{subp:${2:$1}}
 	${0}
-snippet ni \noindent
+snippet noindent \noindent
 	\\noindent
 	${0}
 #References
@@ -235,28 +235,28 @@ snippet citey \citeyear
 snippet fcite \footcite[]{}
 	\\footcite[${1}]{${2}}${0}
 #Formating text: italic, bold, underline, small capital, emphase ..
-snippet ita italic text
+snippet textit italic text
 	\\textit{${1:${VISUAL:text}}}${0}
-snippet bf bold face text
+snippet textbf bold face text
 	\\textbf{${1:${VISUAL:text}}}${0}
-snippet under underline text
+snippet underline underline text
 	\\underline{${1:${VISUAL:text}}}${0}
-snippet over overline text
+snippet overline overline text
 	\\overline{${1:${VISUAL:text}}}${0}
-snippet emp emphasize text
+snippet emph emphasize text
 	\\emph{${1:${VISUAL:text}}}${0}
-snippet sc small caps text
+snippet textsc small caps text
 	\\textsc{${1:${VISUAL:text}}}${0}
 #Choosing font
-snippet sf sans serife text
+snippet textsf sans serife text
 	\\textsf{${1:${VISUAL:text}}}${0}
-snippet rm roman font text
+snippet textrm roman font text
 	\\textrm{${1:${VISUAL:text}}}${0}
-snippet tt typewriter (monospace) text
+snippet texttt typewriter (monospace) text
 	\\texttt{${1:${VISUAL:text}}}${0}
-snippet tsub subscripted text
+snippet textsubscript subscripted text
 	\\textsubscript{${1:${VISUAL:text}}}${0}
-snippet tsup superscripted text
+snippet textsuperscript superscripted text
 	\\textsuperscript{${1:${VISUAL:text}}}${0}
 #Math font
 snippet mf mathfrak
@@ -265,8 +265,10 @@ snippet mc mathcal
 	\\mathcal{${1:${VISUAL:text}}}${0}
 snippet ms mathscr
 	\\mathscr{${1:${VISUAL:text}}}${0}
+snippet mbb mathbb
+	\\mathbb{${1:${VISUAL:text}}}${0}
 #misc
-snippet ft \footnote
+snippet footnote \footnote
 	\\footnote{${1:${VISUAL:text}}}${0}
 snippet fig figure environment (includegraphics)
 	\\begin{figure}
@@ -288,7 +290,7 @@ snippet tikz figure environment (tikzpicture)
 	\\label{fig:${4}}
 	\\end{figure}
 	${0}
-snippet subfig subfigure environment
+snippet subfigure subfigure environment
 	\\begin{subfigure}[${1}]{${2:\\textwidth}}
 	\\begin{center}
 		${3}
@@ -336,7 +338,7 @@ snippet alertblock alertblock environment
 	\\begin{alertblock}{${1:title}}
 		${0:${VISUAL}}
 	\\end{alertblock}
-snippet example exampleblock environment
+snippet exampleblock exampleblock environment
 	\\begin{exampleblock}{${1:title}}
 		${0:${VISUAL}}
 	\\end{exampleblock}
@@ -450,3 +452,97 @@ snippet ra rightarrow
 # Long right arrow
 snippet lra longrightarrow
 	\\longrightarrow {$0}
+
+# Greek alphabet
+snippet alpha alpha
+	\\alpha
+snippet beta beta
+	\\beta
+snippet gamma gamma
+	\\gamma
+snippet delta delta
+	\\delta
+snippet epsilon epsilon
+	\\epsilon
+snippet zeta zeta
+	\\zeta
+snippet eta eta
+	\\eta
+snippet theta theta
+	\\theta
+snippet iota iota
+	\\iota
+snippet kappa kappa
+	\\kappa
+snippet lambda lambda
+	\\lambda
+snippet mu mu
+	\\mu
+snippet nu nu
+	\\nu
+snippet xi xi
+	\\xi
+snippet omicron omicron
+	\\omicron
+snippet pi pi
+	\\pi
+snippet sigma sigma
+	\\sigma
+snippet tau tau
+	\\tau
+snippet upsilon upsilon
+	\\upsilon
+snippet phi phi
+	\\phi
+snippet chi chi
+	\\chi
+snippet psi psi
+	\\psi
+snippet omega omega
+	\\omega
+snippet Alpha Alpha
+	\\Alpha
+snippet Beta Beta
+	\\Beta
+snippet Gamma Gamma
+	\\Gamma
+snippet Delta Delta
+	\\Delta
+snippet Epsilon Epsilon
+	\\Epsilon
+snippet Zeta Zeta
+	\\Zeta
+snippet Eta Eta
+	\\Eta
+snippet Theta Theta
+	\\Theta
+snippet Iota Iota
+	\\Iota
+snippet Kappa Kappa
+	\\Kappa
+snippet Lambda Lambda
+	\\lambda
+snippet Mu Mu
+	\\Mu
+snippet Nu Nu
+	\\Nu
+snippet Xi Xi
+	\\Xi
+snippet Omicron Omicron
+	\\Omicron
+snippet Pi Pi
+	\\Pi
+snippet Sigma Sigma
+	\\Sigma
+snippet Tau Tau
+	\\Tau
+snippet Upsilon Upsilon
+	\\Upsilon
+snippet Phi Phi
+	\\Phi
+snippet Chi Chi
+	\\Chi
+snippet Psi Psi
+	\\Psi
+snippet Omega Omega
+	\\Omega
